@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Official Pinkstaff Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #1a1008;
+      --paper: #ffffff;
+      --aged: #000000;
+      --crease: #444444;
+      --red: #b5272a;
+      --gold: #c9a227;
+      --col-width: 320px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #000000;
+      font-family: 'Libre Baskerville', Georgia, serif;
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* MASTHEAD */
+    .masthead {
+      background: #ffffff;
+      border-bottom: 4px double #222;
+      text-align: center;
+      padding: 28px 20px 18px;
+      position: relative;
+    }
+    .masthead::before {
+      content: '';
+      display: block;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+      margin-bottom: 12px;
+      padding: 4px 0;
+    }
+    .masthead-date {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .masthead h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+    }
+    .masthead-tagline {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #666;
+      margin-top: 8px;
+      border-top: 1px solid var(--crease);
+      padding-top: 8px;
+    }
+
+    /* NEWSPAPER GRID */
+    .newspaper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    .columns {
+      column-count: 3;
+      column-gap: 28px;
+      column-rule: 1px solid #333;
+    }
+
+    @media (max-width: 900px) { .columns { column-count: 2; } }
+    @media (max-width: 560px) { .columns { column-count: 1; } }
+
+    /* ARTICLE CARD */
+    .article {
+      break-inside: avoid;
+      margin-bottom: 32px;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      padding: 18px 16px 14px;
+      box-shadow: 2px 3px 0 rgba(0,0,0,0.3);
+      position: relative;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .article:hover {
+      transform: translateY(-2px);
+      box-shadow: 4px 6px 0 rgba(0,0,0,0.4);
+    }
+
+    /* ISSUE LABEL */
+    .issue-label {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 6px;
+    }
+
+    /* HEADLINE */
+    .article h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .article h2 a {
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .article h2 a:hover { color: var(--red); text-decoration: underline; }
+
+    /* RULE */
+    .article-rule {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 10px 0;
+    }
+
+    /* BODY TEXT */
+    .article p {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: #2a2010;
+    }
+    .article p em {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    /* IMAGE */
+    .article-img {
+      width: 100%;
+      display: block;
+      margin-top: 12px;
+      border: 1px solid var(--crease);
+      filter: sepia(0.35) contrast(1.05);
+      object-fit: cover;
+      max-height: 220px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-family: 'Special Elite', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      color: #666;
+      border-top: 3px double #333;
+    }
+
+    /* BREAKING TAG */
+    .breaking {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-family: 'Special Elite', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-date">Vol. MCMXCIX &nbsp;•&nbsp; Wednesday, April 1, 2026 &nbsp;•&nbsp; Est. Whenever</div>
+    <h1>Official Pinkstaff Blog</h1>
+
+  </header>
+
+  <main class="newspaper">
+    <div class="columns">
+
+      <!-- 1 -->
+      <article class="article">
+        <div class="issue-label">Arts &amp; Entertainment</div>
+        <h2><a href="https://tinyurl.com/34bmza6c" target="_blank">Maxwell Pinkstaff On Tour for "Shobes and Globes", Starring Hit Single "Shiba Guilt Trip"</a></h2>
+        <hr class="article-rule"/>
+        <p>Pinkstaff has one monthly listener on Spotify and hopes that his beautiful music will one day reach the masses. Sources close to the artist confirm tour dates...</p>
+        <img class="article-img" src="https://i.ytimg.com/vi/0tpp8JOWdFo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA1zr5sxZJyyBfNDVIDSW6nBXSLbg" alt="Maxwell Pinkstaff on Tour"/>
+      </article>
+
+      <!-- 2 -->
+      <article class="article">
+        <div class="breaking">Breaking</div>
+        <div class="issue-label">Local Affairs</div>
+        <h2><a href="https://tinyurl.com/34bmza6c" target="_blank">Burning Napkins "Not Productive", According to Lucy Valderramma</a></h2>
+        <hr class="article-rule"/>
+        <p>Junior self-proclaimed "pyromaniac" has recently confessed to multiple war crimes. Investigators have declined to comment on the ongoing napkin-related inquiry...</p>
+        <img class="article-img" src="https://www.originalmagicart.store/cdn/shop/products/Chandra2_print_huge_5000x.jpg?v=1603857298" alt="Burning Napkins"/>
+      </article>
+
+      <!-- 3 -->
+      <article class="article">
+        <div class="issue-label">Community Spotlight</div>
+        <h2><a href="https://tinyurl.com/34bmza6c" target="_blank">Sandy Pinkstaff Voted Number 1 Sapulpa Resident</a></h2>
+        <hr class="article-rule"/>
+        <p>A recent vote was held polling the Sapulpa population, and unanimously, everyone decided Sandy Pinkstaff. <em>"I just know her so well"</em> was the primary reason stated by voters across all precincts...</p>
+        <img class="article-img" src="https://www.sapulpaok.gov/vimages/shared/vnews/stories/5e695afb66be1/1_downtownsapulpa.jpg" alt="Downtown Sapulpa"/>
+      </article>
+
+      <!-- 4 -->
+      <article class="article">
+        <div class="breaking">Developing</div>
+        <div class="issue-label">Crime &amp; Justice</div>
+        <h2><a href="https://tinyurl.com/34bmza6c" target="_blank">Ella Pinkstaff Kidnaps Rhinoceros</a></h2>
+        <hr class="article-rule"/>
+        <p>Well-known philanthropist and horticulture advocate "Tap Tap" has recently been kidnapped from his primary dwelling place. While the whereabouts of his name are unsure and the whereabouts of his father are unsurer...</p>
+        <img class="article-img" src="https://m.media-amazon.com/images/I/71TzfTRX7VL._AC_SX355_.jpg" alt="Jail Bars"/>
+      </article>
+
+      <!-- 5 -->
+      <article class="article">
+        <div class="issue-label">Oddities</div>
+        <h2><a href="https://tinyurl.com/34bmza6c" target="_blank">George Pinkstaff Found In Hole With Walking Sticks, Mushrooms, and Grapefruit</a></h2>
+        <hr class="article-rule"/>
+        <p>George Pinkstaff was found in a ditch outside of a Grapefruit convention. A bystander proclaimed that his last words were something along the lines of wishing to change the type of fruit that the convention was talking about...</p>
+        <img class="article-img" src="https://www.usnews.com/object/image/0000016f-0f52-de13-ad7f-3ff7c51b0000/grapefruit.jpg?update-time=1576510304894&size=responsiveFlow300" alt="Grapefruit"/>
+      </article>
+
+      <!-- 6 -->
+      <article class="article">
+        <div class="issue-label">Technology &amp; Finance</div>
+        <h2><a href="https://tinyurl.com/34bmza6c" target="_blank">New Controversy over "KitchsVideos" Discovered</a></h2>
+        <hr class="article-rule"/>
+        <p>Ever since Ross Pinkstaff launched his debut cryptocurrency KitchCoin in 2020, his YouTube Channel has amassed 9,040 subscribers as of 4/1/2026. Given that Ross was born in 1976, we can calculate with the formula <em>9040 − (2022 − 1976) / T²... actually I need to think for five minutes without saying anything...</em></p>
+        <img class="article-img" src="https://yt3.googleusercontent.com/ytc/AIdro_mYvtOS7KlQYhjGSocCYmxmPJSOwmYN56ZyjVz8IU1ZMA=s900-c-k-c0x00ffffff-no-rj" alt="KitchsVideos YouTube Channel"/>
+      </article>
+
+      <!-- 7 -->
+      <article class="article">
+        <div class="breaking">Convicted</div>
+        <div class="issue-label">Courts</div>
+        <h2><a href="https://tinyurl.com/34bmza6c" target="_blank">Shirley Barker Convicted Without Possibility of Parole</a></h2>
+        <hr class="article-rule"/>
+        <p>Shirley Barker has been arrested in Virginia on five counts of illegal gambling. <em>"Big things are coming,"</em> claims Deputy Llewxam, holding Shirley's prized roulette wheel in his arms. Officials claim this may have been part of a greater laundering scheme...</p>
+        <img class="article-img" src="https://arizent.brightspotcdn.com/e4/38/e7c361c649b4b7f8f1499ed258cd/gambling-adobe-stock.jpeg" alt="Gambling"/>
+      </article>
+
+      <!-- 8 -->
+      <article class="article">
+        <div class="issue-label">Business</div>
+        <h2><a href="https://tinyurl.com/34bmza6c" target="_blank">Adrienne Pinkstaff New Photography Business</a></h2>
+        <hr class="article-rule"/>
+        <p>Adrienne Pinkstaff is advertising a new service where users may be photographed in-person with Sia, celebrity singer responsible for "Chandelier" and "Elastic Heart". Resulting images are attached below, and no appointment is required. <em>"The business is totally legit!"</em> according to a spokesperson of Pinkstaff Photography...</p>
+        <img class="article-img" src="https://i.imgur.com/ZPoZVAr.png" alt="Adrienne Pinkstaff Photography"/>
+      </article>
+
+      <!-- 9 -->
+      <article class="article">
+        <div class="issue-label">Science &amp; Medicine</div>
+        <h2><a href="https://tinyurl.com/34bmza6c" target="_blank">New Research Finds Henry Valderamma Cured Maxwell Pinkstaff's Cancer</a></h2>
+        <hr class="article-rule"/>
+        <p>After countless claims of eventually being able to, Henry Valderamma has finally discovered the cure to Max's cancer. Officials note that while he may be 4 years late, his research will be invaluable when time travel is invented...</p>
+        <img class="article-img" src="https://www.hhrinstitute.org/wp-content/uploads/Research.jpeg" alt="Research"/>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 The Official Pinkstaff Blog &nbsp;•&nbsp; All Rights Reserved
+  </footer>
+
+</body>
+</html>
